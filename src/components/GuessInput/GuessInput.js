@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput() {
+function GuessInput({onSubmitResponse}) {
   const [guessInput, setGuessInput] = React.useState("");
 
   const formSubmitHandler = (event) => {
@@ -10,6 +10,7 @@ function GuessInput() {
     if(guessInput.length === 0) return;
 
     console.log({guess: guessInput});
+    onSubmitResponse(guessInput);
     setGuessInput("");
   }
 
