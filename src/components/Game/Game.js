@@ -23,7 +23,7 @@ function Game() {
 
   return (
     <>
-      <GuessResult userResponses={userResponses} />
+      <GuessResult userResponses={userResponses} answer={answer} />
 
       <GuessInput onSubmitResponse={handleNewResponse} />
     </>

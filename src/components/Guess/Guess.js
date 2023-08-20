@@ -1,13 +1,17 @@
 import React from "react";
+import { checkGuess } from "../../game-helpers";
+import { range } from "../../utils";
 
-function Guess({word}) {
+function Guess({word, answer}) {
+  let isValidWord = typeof word === "string" && word.length === 5;
+
   return (
     <p className="guess">
-      <span className="cell">{word?.charAt(0)}</span>
-      <span className="cell">{word?.charAt(1)}</span>
-      <span className="cell">{word?.charAt(2)}</span>
-      <span className="cell">{word?.charAt(3)}</span>
-      <span className="cell">{word?.charAt(4)}</span>
+      {range(5).map((cell) => {
+        let status = isValidWord && Object.values(checkGuess(word, answer))[cell].status;
+
+        return <span key={cell} className={`cell ${status}`}>{word?.charAt(cell)}</span>
+      })}
     </p>
   );
 }
