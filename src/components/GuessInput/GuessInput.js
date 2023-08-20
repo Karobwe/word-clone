@@ -1,8 +1,6 @@
 import React from "react";
-import Banner from '../Banner/Banner';
-import { NUM_OF_GUESSES_ALLOWED } from "../../constants"
 
-function GuessInput({onSubmitResponse, guessCount, hasFinished, hasWin}) {
+function GuessInput({onSubmitResponse, hasFinished}) {
   const [guessInput, setGuessInput] = React.useState("");
 
   const formSubmitHandler = (event) => {
@@ -19,8 +17,6 @@ function GuessInput({onSubmitResponse, guessCount, hasFinished, hasWin}) {
   return (
     <form className="guess-input-wrapper" onSubmit={formSubmitHandler}>
       <label htmlFor="guess-input">Enter guess:</label>
-
-      {guessCount === NUM_OF_GUESSES_ALLOWED && <Banner guessCount={guessCount} hasWin={hasWin} />}
 
       <input 
         id="guess-input" 

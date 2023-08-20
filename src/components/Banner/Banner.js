@@ -6,8 +6,8 @@ function Banner({guessCount, hasWin = false}) {
       {
         hasWin &&
         <p>
-          <strong>Congratulations!</strong> Got it in
-          <strong>{guessCount} guesses</strong>.
+          <strong>Congratulations!</strong> Got it in 
+          <strong> {guessCount} guesses</strong>.
         </p>
       }
 
